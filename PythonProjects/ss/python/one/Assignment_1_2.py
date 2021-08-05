@@ -29,12 +29,30 @@ if __name__ == '__main__':
     print('Hello World: 10\n')
     
     # 4)
+    while True:
+        try:
+            p = float(input("Please enter the loan size:\n"))
+            break
+        except ValueError:
+            print("Invalid input, please try again\n")
+            
+    while True:
+        try:
+            y = float(input("Please enter the interest rate in percentage:\n"))
+            break
+        except ValueError:
+            print("Invalid input, please try again\n")
+            
+    while True:
+        try:
+            n = float(input("Please enter the number of payments:\n"))
+            break
+        except ValueError:
+            print("Invalid input, please try again\n")
     
-    p = float(input("Please enter the loan size:\n"))
-    y = float(input("Please enter the interest rate in percentage:\n"))
-    n = float(input("Please enter the number of n:\n"))
     
-    print('\nInput data ===========================\nLoan: {a} Interest rate: {b}% Months: {c}'
+    
+    print('\nInput data =====================================\nLoan: {a} Interest rate: {b}% Months: {c}'
           .format(a = p, b = y, c = n))
     
     r = y/100/12
