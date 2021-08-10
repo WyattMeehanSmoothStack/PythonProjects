@@ -1,10 +1,12 @@
 '''
 Created on Aug 9, 2021
 
+This python file is for solving python problems Day_5_A
+
 @author: Wyatt Meehan
 '''
 
-
+# Get a valid integer from 1-5 from the user
 def get_number():
     while True:
         try:
@@ -17,7 +19,8 @@ def get_number():
             print("Invalid input, please try again\n")
             continue        
 
-            
+
+# Get a valid integer from 1-5 from the user
 def get_bmis(num):
     bmis = []
     for x in range(0, num):
@@ -31,10 +34,10 @@ def get_bmis(num):
                 break
             except ValueError:
                 print("Invalid input, please try again\n")
-        
+                continue
     return bmis    
 
-
+# Get grades and print them based on BMI
 def get_grades(bmis):
     grades = []
     for bmi in bmis:

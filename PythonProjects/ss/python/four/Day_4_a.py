@@ -1,23 +1,29 @@
 '''
 Created on Aug 8, 2021
 
+This python file is for solving python problems Day_4_A
+
 @author: Wyatt Meehan
 '''
 
 
 def hello_world():
     print("Hello World")
+
     
 def func1(name):
     print("\nHi my name is {}".format(name))
+
     
 def func3(x, y, z):
     if z == True:
         return x
     else: return y
 
+
 def func4(x, y):
     return x * y
+
 
 def is_even(x):
     if x % 2 == 0:
@@ -25,17 +31,20 @@ def is_even(x):
     else:
         return False
 
+
 def is_greater_than(x, y):
     if x > y:
         return True
     else:
         return False
+
     
 def sum_of(*args):
     sum_of = 0
     for x in args:
         sum_of += x
     return sum_of
+
 
 def get_evens(*args):
     evens = []
@@ -44,6 +53,7 @@ def get_evens(*args):
             evens.append(x)
     return evens       
 
+
 def even_odd_string(string_1):
     new_str = ""
     for letter in string_1:
@@ -51,6 +61,7 @@ def even_odd_string(string_1):
             new_str += letter.upper()
         else: new_str += letter.lower()
     return new_str
+
 
 def greater_lesser(x, y):
     if x % 2 == 0 and y % 2 == 0:
@@ -63,12 +74,14 @@ def greater_lesser(x, y):
             return x
         else:
             return y
+
         
 def start_same(x, y):
     if x[0].upper() == y[0].upper():
         return True
     else:
         return False
+
     
 def twice_as_far(x):
     if x > 7:
@@ -77,15 +90,18 @@ def twice_as_far(x):
         return 7
     else:
         return 7 + ((7 - x) * 2)
+
     
 def first_forth(cap_str):
     new_cap = ""
-    for x in range(0,len(cap_str)):
+    for x in range(0, len(cap_str)):
         if x == 0 or x == 3:
             new_cap += cap_str[x].upper()
         else:
             new_cap += cap_str[x]
     return new_cap     
+
+
 if __name__ == '__main__':
     
     # 1)
@@ -104,7 +120,7 @@ if __name__ == '__main__':
     
     # 5)
     print("\n", is_even(2))
-    print(is_even(1), "\n" )
+    print(is_even(1), "\n")
     
     # 6)
     print(is_greater_than(11, 10))
@@ -116,13 +132,13 @@ if __name__ == '__main__':
     print(sum_of(-5, 6, 10, 100, -20.50))
     
     # 8)
-    print("\n", get_evens(1,2,3,4,5,6,7,8,9, 100, 0, 102, -1000))
+    print("\n", get_evens(1, 2, 3, 4, 5, 6, 7, 8, 9, 100, 0, 102, -1000))
     
     # 9)
     print(even_odd_string("Hello World"))
     
     # 10)
-    print("\n",greater_lesser(20, 22))
+    print("\n", greater_lesser(20, 22))
     print(greater_lesser(20, 23), "\n",)
     
     # 11)
@@ -139,14 +155,4 @@ if __name__ == '__main__':
     # 13) 
     print("\n", first_forth("Hello"))
     print("\n", first_forth("Testing"))
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
