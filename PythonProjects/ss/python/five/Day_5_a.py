@@ -6,6 +6,7 @@ This python file is for solving python problems Day_5_A
 @author: Wyatt Meehan
 '''
 
+
 # Get a valid integer from 1-5 from the user
 def get_number():
     while True:
@@ -17,16 +18,18 @@ def get_number():
             return number
         except ValueError:
             print("Invalid input, please try again\n")
-            continue        
+            continue
+
+        # Get a valid integer from 1-5 from the user
 
 
-# Get a valid integer from 1-5 from the user
 def get_bmis(num):
     bmis = []
     for x in range(0, num):
         while True:
             try:
-                ques = "\nPlease enter the weight (kg) and height (m) separated by a space (entry {}/{}):\n".format(x + 1, num)
+                ques = "\nPlease enter the weight (kg) and height (m) separated by a space (entry {}/{}):\n".format(
+                    x + 1, num)
                 weight, height = input(ques).split(" ")
                 weight = float(weight)
                 height = float(height)
@@ -35,7 +38,8 @@ def get_bmis(num):
             except ValueError:
                 print("Invalid input, please try again\n")
                 continue
-    return bmis    
+    return bmis
+
 
 # Get grades and print them based on BMI
 def get_grades(bmis):
@@ -54,7 +58,6 @@ def get_grades(bmis):
             grades.append("udnerweight")
             print("underweight", end=" ")
 
-       
+
 if __name__ == '__main__':
     get_grades(get_bmis(get_number()))
-    

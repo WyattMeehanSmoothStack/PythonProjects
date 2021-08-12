@@ -13,11 +13,7 @@ def getHTML():
     webpage = webpage_response.content
     return webpage
 
-if __name__ == '__main__':
-    
-    soup = BeautifulSoup(getHTML(), 'html.parser')
 
+if __name__ == '__main__':
+    soup = BeautifulSoup(getHTML(), 'html.parser')
     print(soup.prettify())
-    
-    
-    

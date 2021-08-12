@@ -22,6 +22,7 @@ def read_month(path):
                 print(type(cell.value), end=" || ")
         print(" \n")
 
+
 if __name__ == '__main__':
     read_month(
         "C:\\Users\\meeha\\git\\PythonProjects\\PythonProjects\\.pydevproject"
