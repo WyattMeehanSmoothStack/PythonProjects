@@ -8,8 +8,8 @@ Created on Aug 5, 2021
 if __name__ == '__main__':
     
     # Method for testing room crowdedness 
-    def crowd_test(name_list):
-        if len(name_list) > 3:
+    def crowd_test(name_lis):
+        if len(name_lis) > 3:
             print("The room is crowded")
     
     # List creation

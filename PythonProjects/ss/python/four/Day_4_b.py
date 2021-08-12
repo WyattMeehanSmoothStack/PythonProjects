@@ -1,14 +1,14 @@
-'''
+"""
 Created on Aug 9, 2021
 
 This python file is for solving python problems Day_4_B
 
 @author: Wyatt Meehan
-'''
+"""
 
 
 def make_list(order_number, product, quantity, price):
-    return[(order_number), (product, quantity, price)]
+    return[order_number, (product, quantity, price)]
 
 
 if __name__ == '__main__':

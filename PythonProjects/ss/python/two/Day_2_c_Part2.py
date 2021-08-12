@@ -7,12 +7,12 @@ Created on Aug 5, 2021
 if __name__ == '__main__':
     
     # Method for testing room crowdedness 
-    def crowd_test(name_list):
-        if len(name_list) > 5:
+    def crowd_test(name_lis):
+        if len(name_lis) > 5:
             print("There is a mob in the room.")
-        elif len(name_list) > 2:
+        elif len(name_lis) > 2:
             print("The room is crowded.")
-        elif len(name_list) > 0:
+        elif len(name_lis) > 0:
             print("The room is not crowded.")
         else:
             print("The room is empty.")

@@ -1,33 +1,33 @@
-'''
+"""
 Created on Aug 4, 2021
 
 @author: Wyatt Meehan
-'''
+"""
 
 if __name__ == '__main__':
-    
+
     # 1) 
     sumExample = 50 + 50
     print(sumExample)
     diffExample = 100 - 10
     print(diffExample, '\n')
-    
+
     # 2)
-    
+
     test = 6 ^ 6
     print(test)
-    
+
     exponent = 6 ** 6
     print(exponent)
-    
+
     add = 6 + 6 + 6 + 6 + 6
-    print(add , '\n')
-    
+    print(add, '\n')
+
     # 3)
-    
+
     print('Hello World')
     print('Hello World: 10\n')
-    
+
     # 4)
     while True:
         try:
@@ -35,41 +35,26 @@ if __name__ == '__main__':
             break
         except ValueError:
             print("Invalid input, please try again\n")
-            
+
     while True:
         try:
             y = float(input("Please enter the interest rate in percentage:\n"))
             break
         except ValueError:
             print("Invalid input, please try again\n")
-            
+
     while True:
         try:
             n = float(input("Please enter the number of payments:\n"))
             break
         except ValueError:
             print("Invalid input, please try again\n")
-    
-    
-    
-    print('\nInput data =====================================\nLoan: {a} Interest rate: {b}% Months: {c}'
-          .format(a = p, b = y, c = n))
-    
-    r = y/100/12
-    
-    monthly_payment = p * (r * (1+r) ** n)/((1+r)**n-1)
-    
-   
-    print("\nJoel should pay ${0:0.0f} per month!".format(monthly_payment))
-    
 
-        
-        
-         
-        
-        
-    
-    
-    
-    
-    
+    print('\nInput data =====================================\nLoan: {a} Interest rate: {b}% Months: {c}'
+          .format(a=p, b=y, c=n))
+
+    r = y / 100 / 12
+
+    monthly_payment = p * (r * (1 + r) ** n) / ((1 + r) ** n - 1)
+
+    print("\nJoel should pay ${0:0.0f} per month!".format(monthly_payment))
