@@ -1,8 +1,8 @@
-'''
+"""
 Created on Aug 5, 2021
 
 @author: Wyatt Meehan
-'''
+"""
 
 if __name__ == '__main__':
 
@@ -89,7 +89,6 @@ if __name__ == '__main__':
     comma_tup = tuple(comma_lis)
     print(comma_lis)
     print(comma_tup)
-
 
     # Question 5
     class InputOutString(object):
