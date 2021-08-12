@@ -4,6 +4,7 @@ Created on Aug 11, 2021
 @author: Wyatt Meehan
 """
 import datetime
+import logging
 import re
 import sys
 
@@ -96,6 +97,7 @@ def read_summary(path, worksheet):
                                                                                    month_x.fcr * 100,
                                                                                    month_x.dsat * 100,
                                                                                    month_x.csat * 100))
+            return month_x
 
 
 def read_voc(path, worksheet):
@@ -137,8 +139,25 @@ def read_voc(path, worksheet):
                         print("Detractors: Bad!  ", column[7].value)
 
 
+def log_info(month_x):
+    logging.basicConfig(filename="log.log",
+                        format='%(asctime)s %(message)s',
+                        filemode='w')
+    # Creating an object
+    logger = logging.getLogger()
+
+    # Setting the threshold of logger to DEBUG
+    logger.setLevel(logging.DEBUG)
+    logger.info('\nCalls Offered: {} \nAbandon after 30s:'
+                ' {:.2f}% \nFCR: {:.2f}% \nDSAT: {:.2f}% \nCSAT: {:.2f}%'.format(month_x.calls,
+                                                                                 month_x.aa_thirty * 100,
+                                                                                 month_x.fcr * 100,
+                                                                                 month_x.dsat * 100,
+                                                                                 month_x.csat * 100))
+
+
 if __name__ == '__main__':
     excel_path = ("C:\\Users\\meeha\\git\\PythonProjects\\PythonProjects\\.pydevproject\\PythonProjects\\ss\\python"
                   "\\excel\\expedia_report_monthly_january_2018.xlsx")
-    read_summary(excel_path, "Summary Rolling MoM")
+    log_info(read_summary(excel_path, "Summary Rolling MoM"))
     read_voc(excel_path, "VOC Rolling MoM")
