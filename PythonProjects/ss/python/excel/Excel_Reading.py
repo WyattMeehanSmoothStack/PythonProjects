@@ -57,9 +57,6 @@ def read_workbook(path):
     except FileNotFoundError:
         print("Unable to load WorkBook, Please ensure path in main method is correct!")
         sys.exit("Program ending")
-    except openpyxl.utils.exceptions.InvalidFileException:
-        print("Unable to load workbook, Please ensure path in main method is correct!")
-        sys.exit("Program ending")
 
 
 def read_worksheet(w_b, path):
@@ -140,6 +137,7 @@ def read_voc(path, worksheet):
 
 
 def log_info(month_x):
+
     logging.basicConfig(filename="log.log",
                         format='%(asctime)s %(message)s',
                         filemode='w')
