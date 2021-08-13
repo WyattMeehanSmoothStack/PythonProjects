@@ -24,17 +24,17 @@ if __name__ == '__main__':
     print("1) ", df.head())
 
     # 2)
-    print("2) ", df.info)
+    print("\n2) ", df.info)
 
     # 3)
-    print("3) Mean of first 10,000 base pay: ${:.2f}".format(df['BasePay'][0:10001].mean()))
+    print("\n3) Mean of first 10,000 base pay: ${:.2f}".format(df['BasePay'][0:10001].mean()))
 
     # 4)
-    print("4) Max of TotalPayBenefits: ${}".format(df['TotalPayBenefits'].max()))
+    print("\n4) Max of TotalPayBenefits: ${}".format(df['TotalPayBenefits'].max()))
 
     # 5)
     jos_df = (df.loc[df['EmployeeName'] == 'JOSEPH DRISCOLL'])
-    print("5) ", jos_df.iloc[0]["JobTitle"])
+    print("\n5) ", jos_df.iloc[0]["JobTitle"])
 
     # 6)
     print("6) $", jos_df.iloc[0]["TotalPayBenefits"])
@@ -51,4 +51,18 @@ if __name__ == '__main__':
     # 9)
     avg_df = (df[(df["Year"] >= 2011) & (df["Year"] <= 2014)])
 
+    # 10)
+    print()
+    print(len(pd.unique(df['JobTitle'])))
 
+    # 11)
+    print()
+    print(df["JobTitle"].value_counts()[:7])
+
+    # 12)
+    print()
+    print(len(pd.unique(df['JobTitle'])))
+
+    # 13)
+
+    # 14)
