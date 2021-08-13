@@ -110,21 +110,21 @@ def read_voc(path, worksheet):
         for cell in column:
             if cell.value is not None and cell.value and isinstance(cell.value, datetime.datetime):
                 if get_month_str(cell.value.month)[:3].capitalize() == month_str and str(cell.value.year) == year_str:
-                    ret_str += "\nBase Size: {}\nPromoters (Recommend Score 9 to 10):  {}\nPassives (Recommend Score " \
-                               "7 to "
-                    "8): {}\nDetractors (recommend Score 0 to 6): {}\nAARP Total: {:.2f}\nSat with Agent %: {:.2f}"
-                    "\nDSat "
-                    "with Agent %: {:.2f} ".format(column[2].value,
-                                                   column[3].value,
-                                                   column[5].value,
-                                                   column[7].value,
-                                                   column[12].value * 100,
-                                                   column[15].value * 100,
-                                                   column[18].value * 100)
                     print(
                         "\nBase Size: {}\nPromoters (Recommend Score 9 to 10):  {}\nPassives (Recommend Score 7 to "
                         "8): {}\nDetractors (recommend Score 0 to 6): {}\nAARP Total: {:.2f}\nSat with Agent %: {:.2f}"
                         "\nDSat "
+                        "with Agent %: {:.2f} ".format(column[2].value,
+                                                       column[3].value,
+                                                       column[5].value,
+                                                       column[7].value,
+                                                       column[12].value * 100,
+                                                       column[15].value * 100,
+                                                       column[18].value * 100))
+                    ret_str += (
+                        "Base Size: {} Promoters (Recommend Score 9 to 10):  {} Passives (Recommend Score 7 to "
+                        "8): {} Detractors (recommend Score 0 to 6): {} AARP Total: {:.2f} Sat with Agent %: {:.2f}"
+                        " DSat "
                         "with Agent %: {:.2f} ".format(column[2].value,
                                                        column[3].value,
                                                        column[5].value,
@@ -145,10 +145,10 @@ def read_voc(path, worksheet):
                         print("Detractors: Good!  ", column[7].value)
                     else:
                         print("Detractors: Bad!  ", column[7].value)
-        return ret_str
+                    return ret_str
 
 
-def log_info(month_x, re_str):
+def log_info(month_x, ret_str):
     logging.basicConfig(filename="log.log",
                         format='%(asctime)s %(message)s',
                         filemode='w')
@@ -161,10 +161,11 @@ def log_info(month_x, re_str):
         month_x.fcr * 100,
         month_x.dsat * 100,
         month_x.csat * 100))
-    logger.info(re_str)
+    logger.info("VOC: " + ret_str)
+
 
 if __name__ == '__main__':
     excel_path = ("C:\\Users\\meeha\\git\\PythonProjects\\PythonProjects\\.pydevproject\\PythonProjects\\ss\\python"
                   "\\excel\\expedia_report_monthly_january_2018.xlsx")
-    print(read_voc(excel_path, "VOC Rolling MoM"))
     log_info(read_summary(excel_path, "Summary Rolling MoM"), read_voc(excel_path, "VOC Rolling MoM"))
+    print()
