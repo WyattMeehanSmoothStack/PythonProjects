@@ -3,6 +3,7 @@ Created on Aug 13, 2021
 
 @author: Wyatt Meehan
 """
+
 import sys
 
 import pandas as pd
@@ -50,6 +51,7 @@ if __name__ == '__main__':
 
     # 9)
     avg_df = (df[(df["Year"] >= 2011) & (df["Year"] <= 2014)])
+    print("9) ", avg_df)
 
     # 10)
     print()
@@ -57,12 +59,13 @@ if __name__ == '__main__':
 
     # 11)
     print()
-    print(df["JobTitle"].value_counts()[:7])
+    print("\n11)\n", df["JobTitle"].value_counts()[:7])
 
     # 12)
-    print()
-    print(len(pd.unique(df['JobTitle'])))
+    twenty_thirteen = (df.loc[df["Year"] == 2013])
+    print("\n12) ", twenty_thirteen["Year"])
 
     # 13)
+
 
     # 14)
